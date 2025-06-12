@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+       <link rel="stylesheet" href="style.css">  
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link active">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#todo" class="nav-link">Todo App</a></li>
+                <li><a href="#products" class="nav-link">Product Filter</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="section active">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">About Me</h1>
+                    <p class="section-subtitle">Full-Stack Developer passionate about creating innovative web solutions</p>
+                </div>
+                <div class="about-content">
+                    <div class="profile-image">👨‍💻</div>
+                    <div class="about-text">
+                        <h3>Hello, I'm Harish Developer</h3>
+                        <p>I'm a passionate full-stack developer with over 5 years of experience in creating modern, responsive web applications. I specialize in JavaScript, React, Node.js, and have a keen eye for UI/UX design.</p>
+                        <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying outdoor adventures. I believe in writing clean, maintainable code and creating user experiences that make a difference.</p>
+                        <div class="skills">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">My Projects</h1>
+                    <p class="section-subtitle">A showcase of my recent work and technical achievements</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>E-Commerce Platform</h3>
+                        <p class="project-description">A full-featured e-commerce platform with user authentication, shopping cart, payment processing, and admin dashboard. Built for scalability and performance.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Stripe API</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-primary">Live Demo</a>
+                            <a href="#" class="btn btn-secondary">View Code</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Task Management App</h3>
+                        <p class="project-description">A collaborative task management application with real-time updates, team collaboration features, and advanced filtering capabilities.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-primary">Live Demo</a>
+                            <a href="#" class="btn btn-secondary">View Code</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Weather Dashboard</h3>
+                        <p class="project-description">An interactive weather dashboard with location-based forecasts, historical data visualization, and responsive design for all devices.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Chart.js</span>
+                            <span class="tech-tag">Weather API</span>
+                            <span class="tech-tag">CSS Grid</span>
+                        </div>
+                        <div class="project-buttons">
+                            <a href="#" class="btn btn-primary">Live Demo</a>
+                            <a href="#" class="btn btn-secondary">View Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Todo App Section -->
+        <section id="todo" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">Todo Application</h1>
+                    <p class="section-subtitle">A fully functional todo app with local storage persistence</p>
+                </div>
+                <div class="app-container">
+                    <div class="app-header">
+                        <h2 class="app-title">My Tasks</h2>
+                        <span id="todo-count" style="color: white;">0 tasks</span>
+                    </div>
+                    <div class="todo-input">
+                        <input type="text" id="todo-input" placeholder="Add a new task..." />
+                        <button class="btn btn-primary" onclick="addTodo()">Add Task</button>
+                    </div>
+                    <div id="todo-list" class="todo-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Filter Section -->
+        <section id="products" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">Product Showcase</h1>
+                    <p class="section-subtitle">Interactive product filtering and sorting system</p>
+                </div>
+                <div class="app-container">
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label for="category-filter">Category:</label>
+                            <select id="category-filter" onchange="filterProducts()">
+                                <option value="all">All Categories</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="books">Books</option>
+                                <option value="home">Home & Garden</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="price-filter">Price Range:</label>
+                            <select id="price-filter" onchange="filterProducts()">
+                                <option value="all">All Prices</option>
+                                <option value="0-25">$0 - $25</option>
+                                <option value="25-50">$25 - $50</option>
+                                <option value="50-100">$50 - $100</option>
+                                <option value="100+">$100+</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sort-filter">Sort By:</label>
+                            <select id="sort-filter" onchange="filterProducts()">
+                                <option value="name">Name</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Rating</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="products-grid" class="products-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">Get In Touch</h1>
+                    <p class="section-subtitle">Let's discuss your next project or collaboration opportunity</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">Harish.developer@email.com</div>
+                        <div class="contact-item">+91 63xxxxxxxx</div>
+                        <div class="contact-item">AndhraPradesh, India</div>
+                        <div class="contact-item">Available for freelance work</div>
+                    </div>
+                    <div class="contact-form">
+                        <form onsubmit="handleSubmit(event)">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
